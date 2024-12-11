@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material'
-function TodoItem({todo}) {
+function TodoItem({todo,fetchDetailsOfCurrentTodo}) {
   return (
     <Card sx={{
         maxWidth:350,
@@ -18,13 +18,15 @@ function TodoItem({todo}) {
             </Typography>
         </CardContent>
 
-            <Button sx={
+            <Button 
+            onClick={()=>fetchDetailsOfCurrentTodo(todo?.id)}
+            sx={
                 {
                     backgroundColor:'#000000',
                     color:'#fff',
                     opacity:'0.9',
-                    "&:hover":{
-                        backgroundColor:'black',
+                    ":hover":{
+                        backgroundColor:'green',
                         color:'white'
                     }
 
